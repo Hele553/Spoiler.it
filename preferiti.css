@@ -1,0 +1,275 @@
+@font-face{
+    src: url(Gemosh.ttf);
+    font-family: 'Gemosh';
+}
+/* :root{
+    --viola: #3a015c;
+    --bordeaux: #000000;
+    --rosso: #35012c;
+    --arancione: #290025;
+    --giallo: #4f0147;
+    --marginTopDescrMainFDG: 3%;
+} */
+:root{
+    --viola: #390099;
+    --bordeaux: #9e0059;
+    --rosso: #ff0054;
+    --arancione: #ff5400;
+    --giallo: #ffbd00;
+    --marginTopDescrMainFDG: 3%;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+*:focus{
+    outline: none;
+}
+.bottone{
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s linear;
+    border: none;
+    font-size: 17.5px;
+    padding: 10px 17.5px;
+}
+.bottone:hover{
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.075);
+}
+body{
+    background-color: var(--bordeaux);
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    width: 100%;
+    height: 7vh;
+    background-color: var(--giallo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    transition: all .2s ease;
+}
+#navTitle{
+    position: absolute;
+    left: 2vw;
+    padding-top: 7px;
+}
+.title{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--viola);
+    text-transform: uppercase;
+    font-size: 45px;
+}
+.title a{
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.title a:hover{
+    color: #ff0054;
+}
+#opzNav{
+    display: flex;
+    list-style-type: none;
+    gap: 4vw;
+    font-size: 23px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#opzNav li a{
+    color: var(--bordeaux);
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+}
+#opzNav li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: var(--bordeaux);
+    position: absolute;
+    top: 26.5px;
+    transition: all .5s cubic-bezier(.215, .61, .355, 1);
+}
+#opzNav li a:hover::after{
+    width: 100%;
+}
+#opzNav li .opzNavFocus::after{
+    width: 100%;
+}
+.btnAccedi{
+    position: absolute;
+    right: 2vw;
+    background-color: var(--bordeaux);
+}
+h2{
+    color: var(--giallo);
+    font-size: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 1vw;
+    margin-top: 20px;
+}
+/* FILM */
+.contFilm{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: fit-content;
+    width: 100%;
+    gap: 10px;
+    padding: 30px;
+}
+.film{
+    /* border: 1px solid rgb(255, 0, 251); */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    border: solid 5px var(--viola);
+    overflow: hidden;
+}
+.copertina{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.descrAll{
+    width: 100%;
+    height: 0%;
+    padding: 0px;
+    background-color: var(--giallo);
+    position: absolute;
+    bottom: 0;
+    transition: height .3s ease-out;
+    overflow: hidden;
+    padding: 0px 7px 0px 7px;
+}
+.film:hover .descrAll{
+    height: 40%;
+    padding: 7px 7px 0px 7px;
+}
+#descAllTitle{ /* titolo dei film del giono che si trova nella descrizione a tendina */
+    font-size: calc(17.5px - 20%);
+    width: max-content;
+}
+.descAllUndertitle{
+    width: 100%;
+    margin-top: 7px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.descAllGeneri{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.film:hover .salvaPreferiti{
+    height: 35px;
+    width: 35px;
+}
+.salvaPreferiti{
+    height: 0px;
+    width: 0px;
+    cursor: pointer;
+    transition: all .2s ease;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.film:hover .salvaPreferiti{
+    height: 35px;
+    width: 35px;
+}
+.salvaPreferiti:hover{
+    height: 35px;
+    width: 35px;
+    transform: scale(1.05);
+    display: block;
+}
+
+.contBtnTornaSu{
+    width: 100%;
+    margin-top: 20px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnTornaSu{
+    background-color: var(--viola);
+    color: var(--giallo);
+    text-decoration: none;
+}
+/* FOOTER */
+footer{
+    background-color: var(--viola);
+    margin-top: 20px;
+    padding: 30px;
+    color: var(--giallo);
+}
+#footTitle{
+    color: inherit;
+}
+#intLinkFoot{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 15%;
+    list-style-type: none;
+    gap: 20px;
+    margin-top: 20px;
+}
+#intLinkFoot a{
+    color: inherit;
+    text-decoration: none;
+}
+#socialFoot{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+#socialFoot li a img{
+    height: 30px;
+}
+.linea{
+    width: 100%;
+    border: 1.5px solid var(--giallo);
+    margin-top: 30px;
+}
+#extLinkFoot{
+    display: flex;
+    color: var(--giallo);
+    gap: 20px;
+    margin-top: 20px;
+}
+#extLinkFoot a{
+    color: inherit;
+    margin: 0px 20px 0px 0px;
+    text-decoration: none;
+    width: fit-content;
+}
+#copyright{
+    margin-top: 20px;
+    color: var(--giallo);
+}
+/* footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+} */

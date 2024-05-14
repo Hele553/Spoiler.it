@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi</title>
+    <link rel="stylesheet" href="accedi.css">
+    <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/image/logo.png" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <h1 id="navTitle" class="title"><a href="home.html">!Spoiler.it</a></h1>
+        <ul id="opzNav">
+            <li><a href="home.html">Home</a></li>
+            <li><a id="btnPreferiti">Preferiti</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contattaci.html">Contattaci</a></li>
+        </ul>
+        <section id="secSearchBar">
+            <div id="childSecSearchBar">
+                <input type="text" id="searchBar" placeholder="Cerca un film">
+                <div id="lente"><img src="/image/magnifying-glass.png" alt=""></div>    
+                <div id="suggeriti"></div>
+            </div>
+        </section>
+        <button class="btnAccedi bottone"><a href="accedi.html">Accedi</a></button>
+    </nav>
+    <main>
+        <div class="leftSide">
+            <h1>Bentornato!</h1>
+        </div>
+        <div class="rightSide">
+            <h2>Accedi al tuo account</h2>
+            <form class="contInput">
+                <input class="input" required type="text" placeholder="Inserisci il nome utente">
+                <input class="input" required type="email" placeholder="Inserisci l'e-mail">
+                <input class="input" required type="password" placeholder="Inserisici la password">
+                <div class="otherInput">
+                    <div class="contRestaConnesso">
+                        <input type="checkbox" name="restaConnesso" id="">
+                        <label for="restaConnesso">Resta connesso</label>
+                    </div>
+                    <span><a href="inCostruzione.html">Password dimenticata</a></span>
+                    <span><a href="inCostruzione.html">Registrati</a></span>
+                </div>
+                <div class="contBtn">
+                    <input type="submit" class="bottone submit" value="Accedi">
+                    <input type="reset" class="bottone reset" value="Reset">
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/footer.js"></script>
+    <script src="/search.js"></script>
+    <script>
+        const main = document.querySelector('main');
+        const nav = document.querySelector('nav');
+        main.style.height = `${window.innerHeight - nav.clientHeight}px`;
+        const leftSide = document.querySelector('.leftSide');
+        const rightSide = document.querySelector('.rightSide');
+        fetch('film.json').then((response)=>{
+            if(!response.ok){
+                throw new Error(`Error during fetching: ${response.status}`);
+            }
+            return response.json();
+        }).then((filmJSON)=>{
+            function apriPagina(pagina, numero) {
+                window.location.href = pagina + '?numero=' + numero;
+            } 
+            function generaElemento(tag, attributo, valoreAttributo, parent){
+                elemento = document.createElement(tag);
+                if(valoreAttributo != ''){
+                    elemento.setAttribute(attributo, valoreAttributo);
+                }
+                parent.appendChild(elemento);
+                return elemento;
+            }
+            leftSide.style.backgroundImage = `url(${filmJSON[Math.floor(Math.random() * filmJSON.length)].immagini_varie[Math.floor(Math.random() * 3)]})`;
+        }).catch((error)=>{
+            console.error('Error:', error);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+Mistero:
+"The Sixth Sense" (1999)
+"Gone Girl" (2014)
+"Se7en" (1995)
+"The Usual Suspects" (1995)
+
+Scolastico:
+"Dead Poets Society" (1989)
+"The Breakfast Club" (1985)
+"Mean Girls" (2004)
+"Good Will Hunting" (1997)
+"Ferris Bueller's Day Off" (1986)
+
+Famiglia:
+"The Lion King" (1994)
+"Little Miss Sunshine" (2006)
+"Life is Beautiful" (1997)
+"Cinema Paradiso" (1988)
+
+Guerra:
+"Saving Private Ryan" (1998)
+"Apocalypse Now" (1979)
+"Full Metal Jacket" (1987)
+"Platoon" (1986)
+
+Animazione:
+"Spirited Away" (2001)
+"Toy Story" (1995)
+"Wall-E" (2008)
+"Up" (2009)
+
+Sportivo:
+"Raging Bull" (1980)
+"Remember the Titans" (2000)
+"Moneyball" (2011)
+"The Blind Side" (2009)
+
+Carcere:
+"Escape from Alcatraz" (1979)
+"A Prophet" (2009)
+"Bronson" (2008)
+
+Musicale:
+"The Sound of Music" (1965)
+"Singin' in the Rain" (1952)
+"West Side Story" (1961)
+
+Gangster:
+"Scarface" (1983)
+"Casino" (1995)
+
+Sci-Fi:
+"The Matrix" (1999)
+"Inception" (2010)
+"Interstellar" (2014)
+"2001: A Space Odyssey" (1968)
+
+Biografico:
+"The Theory of Everything" (2014)
+"Amadeus" (1984)
+"The Pursuit of Happyness" (2006)

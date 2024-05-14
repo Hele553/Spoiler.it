@@ -1,0 +1,223 @@
+@font-face{
+    src: url(Gemosh.ttf);
+    font-family: 'Gemosh';
+}
+/* :root{
+    --viola: #323232;
+    --bordeaux: #000000;
+    --rosso: #FF1E56;
+    --arancione: #FFAC41;
+    --giallo: #FFAC41;
+    --marginTopDescrMainFDG: 3%;
+} */
+:root{
+    --viola: #390099;
+    --bordeaux: #9e0059;
+    --rosso: #ff0054;
+    --arancione: #ff5400;
+    --giallo: #ffbd00;
+    --marginTopDescrMainFDG: 3%;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+*:focus{
+    outline: none;
+}
+.bottone{
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s linear;
+    border: none;
+    font-size: 17.5px;
+    padding: 10px 17.5px;
+}
+.bottone:hover{
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.075);
+}
+body{
+    background: rgb(255,189,0);
+    background: radial-gradient(circle, rgba(255,189,0,1) 0%, rgba(57,0,153,1) 70%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+nav{
+    width: 100%;
+    height: 7vh;
+    background-color: var(--giallo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    transition: all .2s ease;
+}
+#navTitle{
+    position: absolute;
+    left: 2vw;
+    padding-top: 7px;
+}
+.title{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--viola);
+    text-transform: uppercase;
+    font-size: 45px;
+}
+.title a{
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.title a:hover{
+    color: #ff0054;
+}
+#opzNav{
+    display: flex;
+    list-style-type: none;
+    gap: 4vw;
+    font-size: 23px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#opzNav li a{
+    color: var(--bordeaux);
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+}
+#opzNav li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: var(--bordeaux);
+    position: absolute;
+    top: 26.5px;
+    transition: all .5s cubic-bezier(.215, .61, .355, 1);
+}
+#opzNav li a:hover::after{
+    width: 100%;
+}
+#opzNav li .opzNavFocus::after{
+    width: 100%;
+}
+.btnAccedi{
+    position: absolute;
+    right: 2vw;
+    background-color: var(--bordeaux);
+}
+.btnAccedi a{
+    color: inherit;
+    text-decoration: none;
+}
+.btnAccedi a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+/* MAIN */
+
+main{
+    display: flex;
+    height: 100%;
+    padding: 100px;
+}
+main div{
+    border: 5px solid var(--giallo);
+    height: 100%;
+    width: 50%;
+}
+.leftSide{
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 0px;
+}
+.leftSide h1{
+    color: var(--viola);
+    background-color: var(--giallo);
+    display: inline;
+    padding: 10px 20px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 6vw;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 5px;
+}
+.rightSide{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--giallo);
+}
+.rightSide h2{
+    color: var(--viola);
+    font-size: 57.5px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+}
+form .input{
+    width: 20.5vw;
+    padding: 10px 17px;
+}
+.otherInput{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.contRestaConnesso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+form .otherInput .contRestaConnesso label{
+    color: var(--viola);
+    font-size: 14px;
+}
+form .otherInput span a{
+    color: var(--rosso);
+    font-size: 14px;
+}
+.contBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.submit, .reset{
+    background-color: var(--rosso);
+}
+footer{
+    border-top: solid 3px var(--giallo);
+}

@@ -1,0 +1,43 @@
+#secSearchBar{
+    right: 11vw;
+    position: absolute;
+}
+#childSecSearchBar{
+    display: flex;
+    position: relative;
+}
+#searchBar{
+    height: 30px;
+    width: 12.5vw;
+    padding: 0px 0px 0px 10px;
+}
+#lente{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+#lente img{
+    max-height: 20px;
+}
+#suggeriti{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: auto; /* dinamico */
+    display: flex;
+    flex-direction: column;
+}
+#suggeriti div{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 13px;
+    transition: all .1s linear;
+}
+#suggeriti div:hover{
+    background-color: rgb(220, 220, 220);
+}

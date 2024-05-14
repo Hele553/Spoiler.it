@@ -1,0 +1,445 @@
+@font-face{
+    src: url(Gemosh.ttf);
+    font-family: 'Gemosh';
+}
+/* :root{
+    --viola: #323232;
+    --bordeaux: #000000;
+    --rosso: #FF1E56;
+    --arancione: #FFAC41;
+    --giallo: #FFAC41;
+    --marginTopDescrMainFDG: 3%;
+} */
+:root{
+    --viola: #390099;
+    --bordeaux: #9e0059;
+    --rosso: #ff0054;
+    --arancione: #ff5400;
+    --giallo: #ffbd00;
+    --marginTopDescrMainFDG: 3%;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+*:focus{
+    outline: none;
+}
+.bottone{
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s linear;
+    border: none;
+    font-size: 17.5px;
+    padding: 10px 17.5px;
+}
+.bottone:hover{
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.075);
+}
+body{
+    background-color: var(--bordeaux);
+    /* background-color: white;
+    background-color: rgb(17, 16, 16);
+    background-color: #1a1c1f; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+nav{
+    width: 100%;
+    height: 7vh;
+    background-color: var(--giallo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    transition: all .2s ease;
+}
+#navTitle{
+    position: absolute;
+    left: 2vw;
+    padding-top: 7px;
+}
+.title{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--viola);
+    text-transform: uppercase;
+    font-size: 45px;
+}
+.title a{
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.title a:hover{
+    color: #ff0054;
+}
+#opzNav{
+    display: flex;
+    list-style-type: none;
+    gap: 4vw;
+    font-size: 23px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#opzNav li a{
+    color: var(--bordeaux);
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+}
+#opzNav li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: var(--bordeaux);
+    position: absolute;
+    top: 26.5px;
+    transition: all .5s cubic-bezier(.215, .61, .355, 1);
+}
+#opzNav li a:hover::after{
+    width: 100%;
+}
+#opzNav li .opzNavFocus::after{
+    width: 100%;
+}
+.btnAccedi{
+    position: absolute;
+    right: 2vw;
+    background-color: var(--bordeaux);
+}
+.btnAccedi a{
+    color: inherit;
+    text-decoration: none;
+}
+.btnAccedi a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+/**
+* * Film del Giorno
+*/
+
+#secFilmDelGiorno{
+    /* height: Inserita da JS; */
+    display: grid;
+    grid-template-rows: calc(100% / 3 * 2) calc(100% / 3);
+}
+#mainFDG{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#descMainFDG{
+    background: var(--viola);
+    background: linear-gradient(90deg, var(--viola) 66%, rgba(255,255,255,0) 100%);         
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 20px 20px 20px 2vw;
+}
+.titleMainFDG{
+    color: var(--giallo);
+    font-size: 30px;
+}
+.contNameMainFDG{
+    overflow: hidden;
+    max-width: 70%;
+    margin: var(--marginTopDescrMainFDG) 0px 0px 0px;
+}
+.nameMainFDG{
+    color: var(--giallo);
+    font-size: 45px;
+    /* max-width: 80%; */
+    width: max-content;
+}
+.contADRG_MainFDG{ 
+    /* container anno, durata, rating, generi del Film del Giorno principale */
+    max-width: 60%;
+    font-size: 30px;
+    color: var(--giallo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--marginTopDescrMainFDG) 0px 0px 0px;
+}
+.generiMainFDG{
+    max-width: 60%;
+    font-size: 25px;
+    color: var(--giallo);
+    margin: var(--marginTopDescrMainFDG) 0px 0px 0px;
+}
+.tramaMainFDG{
+    color: var(--giallo);
+    margin: var(--marginTopDescrMainFDG) 0px 0px 0px;
+    font-size: 20px;
+    max-width: 60%;
+}
+.contBtnMainFDG{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2vw;
+    margin-top: var(--marginTopDescrMainFDG);
+}
+.btnApprofondisciMainFDG{
+    padding: 10px 17.5px;
+    background-color: var(--bordeaux);
+    color: white;
+    font-size: 17.5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.btnApprofondisciMainFDG:hover{
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.075);
+}
+/* #continuaadEsplorare{
+} */
+#continuaadEsplorare a{
+    font-size: 22.5px;
+    text-decoration: underline;
+    color: var(--arancione);
+}
+.imageMainFDG{
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--viola);
+}
+.salvaPreferitiMainFDG{
+    height: 50px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.salvaPreferitiMainFDG:hover{
+    transform: scale(1.05);
+}
+#secAllFDG{
+    width: 100%;
+    background-color: var(--rosso);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+}
+#secAllFDG h2{
+    color: var(--giallo);
+    font-size: 60px;
+    text-align: center;
+}
+.allFDG{
+    /* altezza e larghezza calcolata con JS */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    border: solid 5px var(--viola);
+    overflow: hidden;
+}
+.copertinaFDG{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.descrAllFDG{ /* descrizione a tendina dei film del giorno */
+    width: 100%;
+    height: 0%;
+    padding: 0px;
+    background-color: var(--giallo);
+    position: absolute;
+    bottom: 0;
+    transition: height .3s ease-out;
+    overflow: hidden;
+    padding: 0px 7px 0px 7px;
+}
+.allFDG:hover .descrAllFDG{
+    height: 40%;
+    padding: 7px 7px 0px 7px;
+}
+#descAllFDGTitle{ /* titolo dei film del giono che si trova nella descrizione a tendina */
+    font-size: calc(17.5px - 20%);
+    width: max-content;
+}
+.descAllFDGUndertitle{
+    width: 100%;
+    margin-top: 7px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.descAllFDGGeneri{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.salvaPreferiti{
+    height: 0px;
+    width: 0px;
+    cursor: pointer;
+    transition: all .2s ease;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.allFDG:hover .salvaPreferiti{
+    height: 35px;
+    width: 35px;
+}
+.salvaPreferiti:hover{
+    height: 35px;
+    width: 35px;
+    transform: scale(1.05);
+    display: block;
+}
+#contSlogan{
+    background-color: var(--viola);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    border-top: solid 5px var(--giallo);
+}
+.slogan{
+    font-size: 15px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--giallo);
+    transition: all 1s ease;
+}
+
+/* TUTTI I FILM */
+.contGenere{
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    overflow: hidden;
+    height: max-content;
+    padding: 6vh 20px 20px 20px;
+    border-top: 2.5px solid var(--giallo);
+    border-bottom: 2.5px solid var(--giallo);
+}
+.titleGenere{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    color: var(--giallo);
+    font-size: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.contLeftArrow, .contRightArrow{
+    height: 100%;
+}
+.contLeftArrow, .contRightArrow, .contFilm{
+    /* border: 1px solid rgb(255, 234, 0); */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leftArrowFilm, .rightArrowFilm{
+    height: 50px;
+    cursor: pointer;
+}
+.mainContFilm{
+    width: 100%;
+    overflow: hidden;
+}
+.contFilm{
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    gap: 20px;
+    z-index: 1;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+.film{
+    /* border: 1px solid rgb(255, 0, 251); */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    border: solid 5px var(--viola);
+    border: solid 5px var(--giallo);
+    overflow: hidden;
+}
+.copertina{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.descrAll{
+    width: 100%;
+    height: 0%;
+    padding: 0px;
+    background-color: var(--giallo);
+    position: absolute;
+    bottom: 0;
+    transition: height .3s ease-out;
+    overflow: hidden;
+    padding: 0px 7px 0px 7px;
+}
+.film:hover .descrAll{
+    height: 40%;
+    padding: 7px 7px 0px 7px;
+}
+#descAllTitle{ /* titolo dei film del giono che si trova nella descrizione a tendina */
+    font-size: calc(17.5px - 20%);
+    width: max-content;
+}
+.descAllUndertitle{
+    width: 100%;
+    margin-top: 7px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.descAllGeneri{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.film:hover .salvaPreferiti{
+    height: 35px;
+    width: 35px;
+}
+.contBtnTornaSu{
+    width: 100%;
+    margin: 20px 0px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnTornaSu{
+    background-color: var(--viola);
+    color: var(--giallo);
+    text-decoration: none;
+}
